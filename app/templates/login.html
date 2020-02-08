@@ -1,0 +1,23 @@
+{% if error%}
+<p>Sorry, account not found try again</p>
+<a href={{ url_for('index') }}>To Sign Up</a>
+{% endif %}
+
+<form method="POST">
+    <p>Email</p>
+    <input 
+        type="email"
+        name="email"
+        required>
+    <p>Password</p>
+    <input 
+        minlength="6" 
+        type="password"
+        name="password"
+        required>
+    <br>
+    <br>
+    <input 
+        type="submit"
+        required>
+</form>

@@ -1,0 +1,41 @@
+    <h1>TODO APP</h1>
+
+    <form method="POST">
+        <p>Name</p>
+        <input 
+        placeholder="5-20 symbols"
+        minlength="5"
+        maxlength="20"
+        name="name"
+        required>
+        <p>Email</p>
+        <input 
+            placeholder="enter a valid email"
+            type="email"
+            name="email"
+            required>
+        <p>Password</p>
+        <input 
+            placeholder="6+" 
+            minlength="6" 
+            type="password"
+            name="password"
+            required>
+        <p>Password</p>
+        <input 
+            type="password" 
+            placeholder="repeat your password" 
+            minlength="6"
+            name="password_check"
+            required>
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+    <a href={{ url_for('login') }}>Already have account</a>
+    {% if error == 'passwords_not_match' %}
+    <p>Sorry, seems like passwords, which you enter don't math</p>
+    {% elif error == 'already_exists' %}
+    <p>Sorry, seems like this account already exists</p>
+    {% endif %}
